@@ -1,0 +1,30 @@
+.input {
+  width: 100%;
+  background-color: var(--veryDarkGrayishBlue);
+  border-radius: .25rem;
+
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.input .icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--darkGrayishBlue);
+
+  margin: 1.5rem 1rem;
+}
+
+#add-todo {
+  flex: 1;
+  background: #0000;
+  outline: none;
+  border: none;
+  font-size: 1.25rem;
+}
+
+#add-todo::placeholder {
+  color: var(--darkGrayishBlue);
+  letter-spacing: 2px;
+}

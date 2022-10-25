@@ -1,0 +1,21 @@
+footer,
+footer div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem
+}
+
+footer p {
+  margin: 0 .5rem;
+  transition: .3s ease;
+}
+
+.option-active {
+  color: var(--brightBlue);
+}
+
+footer p:hover {
+  cursor: pointer;
+  color: var(--lightGrayishBlue)
+}
