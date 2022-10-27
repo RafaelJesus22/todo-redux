@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
 import './styles.css'
 
 interface Option {
@@ -7,6 +9,8 @@ interface Option {
 }
 
 export const Footer: React.FC = () => {
+  const { tasks } = useSelector((state: RootState) => state.task)
+
   const [options, setOptions] = useState<Array<Option>>([
     {
       name: "Todas",
@@ -31,9 +35,11 @@ export const Footer: React.FC = () => {
     }))
   }
 
+  if (!tasks || tasks.length === 0) return null;
+
   return (
     <footer>
-      <span>5 items left</span>
+      <span>{tasks.length} {tasks.length === 1 ? "item" : "items"} left</span>
       <div>
         {options.map(option => (
           <p

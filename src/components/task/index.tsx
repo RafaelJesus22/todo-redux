@@ -1,17 +1,15 @@
+import { Task as Props} from '../../types'
 import './styles.css'
 
-interface TaskProps {
-  task: string;
-  completed: boolean
-}
 
-export const Task: React.FC<TaskProps> = ({
-  task
+export const Task: React.FC<Props> = ({
+  id,
+  name,
 }) => {
   return (
-    <div className="task" id={task}>
+    <div className="task" id={id}>
       <div className="icon" />
-      <p>{task}</p>
+      <p>{name}</p>
     </div>
   )
 }

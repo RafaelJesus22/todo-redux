@@ -1,0 +1,10 @@
+section#no-tasks {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section#no-tasks h2 {
+  font-size: 2rem;
+}

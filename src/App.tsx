@@ -1,8 +1,7 @@
 import { AddTask } from "./components/AddTask"
-import { BackgroundImage } from "./components/backgroundImage"
 import { Footer } from "./components/footer"
 import { Header } from "./components/header"
-import { Task } from "./components/task"
+import { Tasks } from "./components/tasks"
 
 const tasks = [
   {
@@ -30,17 +29,12 @@ const tasks = [
 function App() {
   return (
     <div className="App">
-      {/* <BackgroundImage /> */}
-
-
       <main>
         <Header />
         <AddTask />
 
         <section>
-          {tasks.map(task => (
-            <Task {...task} />
-          ))}
+          <Tasks />
         
           <Footer />
         </section>
