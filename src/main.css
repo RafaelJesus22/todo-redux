@@ -8,6 +8,8 @@
   --veryDarkGrayishBlue: #4d5066;
   --veryDarkGrayishBlue: #393a4c;
   --brightBlue: #3a7bfd;
+
+  --border-radius: .5rem;
 }
 
 * {
@@ -40,7 +42,7 @@ main {
 
 section {
   background-color: var(--veryDarkGrayishBlue);
-  border-radius: .25rem;
+  border-radius: var(--border-radius);
 }
 
 @media (max-width: 1440px) {

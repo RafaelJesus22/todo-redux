@@ -1,7 +1,7 @@
 .input {
   width: 100%;
   background-color: var(--veryDarkGrayishBlue);
-  border-radius: .25rem;
+  border-radius: var(--border-radius);
 
   display: flex;
   margin-bottom: 2rem;
