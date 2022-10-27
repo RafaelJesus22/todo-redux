@@ -1,0 +1,11 @@
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--darkGrayishBlue);
+}
+
+.icon.complete {
+  background: rgb(138, 39, 190);
+  background: linear-gradient(280deg, rgba(138, 39, 190, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { v4 as uuid } from 'uuid'
 import { addTask } from '../../store/slices/tasksSlice'
 import { Task } from '../../types'
+import { Icon } from '../icon'
 import './styles.css'
 
 type FormEvent = React.SyntheticEvent;
@@ -28,7 +29,7 @@ export const AddTask: React.FC = () => {
   return (
     <form onSubmit={(event: FormEvent) => handleSubmit(event)}>
       <div className="input" >
-        <div className="icon" />
+        <Icon complete={false} />
         <input
           type="text"
           id="add-todo"

@@ -21,4 +21,10 @@ section .task .icon {
 section .task p {
   font-size: 1.25rem;
   margin-left: 1rem;
+  transition: color .5s ease-in-out;
+}
+
+section .task p.complete {
+  color: var(--darkGrayishBlue);
+  text-decoration: line-through;
 }
