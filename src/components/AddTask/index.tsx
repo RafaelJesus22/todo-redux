@@ -1,5 +1,6 @@
-import React, { useId, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { v4 as uuid } from 'uuid'
 import { addTask } from '../../store/slices/tasksSlice'
 import { Task } from '../../types'
 import './styles.css'
@@ -14,13 +15,14 @@ export const AddTask: React.FC = () => {
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
     const newTask: Task = {
-      id: '123',
+      id: uuid(),
       name: taskName,
       complete: false,
       date: new Date(),
     }
 
     dispatch(addTask(newTask));
+    setTaskName("")
   }
 
   return (
