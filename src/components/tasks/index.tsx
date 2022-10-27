@@ -5,8 +5,7 @@ import './styles.css'
 
 export const Tasks: React.FC = () => {
   const { tasks } = useSelector((state: RootState) => state.task)
-
-  console.log(tasks)
+  const { filter } = useSelector((state: RootState) => state.filter)
 
   if (tasks.length === 0 || !tasks) {
     return (
@@ -18,9 +17,12 @@ export const Tasks: React.FC = () => {
 
   return (
     <>
-      {tasks.map(task => (
-        <Task {...task} />
-      ))}
+      {filter === "All" ?
+        tasks.map(task => <Task {...task} />) :
+          filter === "complete" ?
+            tasks.filter(task => task.complete).map(task => <Task {...task} />) :
+            tasks.filter(task => !task.complete).map(task => <Task {...task} />)
+      }
     </>
   )
 }
