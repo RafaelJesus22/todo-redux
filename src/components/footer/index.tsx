@@ -1,38 +1,38 @@
 import { useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
+import { Filter } from '../../types';
+import { setFilter } from '../../store/slices/filterSlice' 
 import './styles.css'
 
 interface Option {
   name: string;
-  active: boolean;
+  filter: Filter;
 }
 
 export const Footer: React.FC = () => {
-  const { tasks } = useSelector((state: RootState) => state.task)
+  const dispatch = useDispatch()
 
-  const [options, setOptions] = useState<Array<Option>>([
+  const { tasks } = useSelector((state: RootState) => state.task)
+  const { filter } = useSelector((state: RootState) => state.filter)
+
+  const [options] = useState<Array<Option>>([
     {
       name: "Todas",
-      active: true,
+      filter: "All",
     },
     {
       name: "A fazer",
-      active: false,
+      filter: "todo",
     },
     {
       name: "Completas",
-      active: false,
+      filter: "complete",
     },
   ])
 
   function handleSelect(option: Option) {
-    setOptions(options.map(o => {
-      return {
-        name: o.name,
-        active: o.name === option.name
-      }
-    }))
+    dispatch(setFilter(option.filter))
   }
 
   if (!tasks || tasks.length === 0) return null;
@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
         {options.map(option => (
           <p
             onClick={() => handleSelect(option)}
-            className={option.active ? 'option-active' : ''}
+            className={option.filter === filter ? 'option-active' : ''}
           >
             {option.name}
           </p>

@@ -4,3 +4,5 @@ export interface Task {
   complete: boolean;
   date?: Date;
 }
+
+export type Filter = "All" | "complete" | "todo";
