@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store';
+import { useDispatch } from 'react-redux';
 import { Filter } from '../../types';
 import { setFilter } from '../../store/slices/filterSlice' 
+import { useAppSelector } from '../../store/hooks';
 import './styles.css'
 
 interface Option {
@@ -13,8 +13,8 @@ interface Option {
 export const Footer: React.FC = () => {
   const dispatch = useDispatch()
 
-  const { tasks } = useSelector((state: RootState) => state.task)
-  const { filter } = useSelector((state: RootState) => state.filter)
+  const { tasks } = useAppSelector(state => state.task)
+  const { filter } = useAppSelector(state => state.filter)
 
   const [options] = useState<Array<Option>>([
     {

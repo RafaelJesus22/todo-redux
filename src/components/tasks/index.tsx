@@ -1,11 +1,10 @@
-import { useSelector } from 'react-redux'
-import { RootState } from '../../store'
+import { useAppSelector } from '../../store/hooks'
 import { Task } from '../task'
 import './styles.css'
 
 export const Tasks: React.FC = () => {
-  const { tasks } = useSelector((state: RootState) => state.task)
-  const { filter } = useSelector((state: RootState) => state.filter)
+  const { tasks } = useAppSelector(state => state.task)
+  const { filter } = useAppSelector(state => state.filter)
 
   if (tasks.length === 0 || !tasks) {
     return (
